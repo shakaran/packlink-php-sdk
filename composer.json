@@ -1,0 +1,46 @@
+{
+	"license" : "AGPL-3.0+",
+	"homepage" : "https://angelguzmanmaeso.com",
+	"type" : "library",
+	"description" : "A PHP library for implement the Packlink API REST service from Packlink Shipping, S.L.",
+	"name" : "packlink-php-sdk",
+	"authors" : [{
+			"name" : "Ángel Guzmán Maeso",
+			"email" : "angel@guzmanmaeso.com",
+			"homepage" : "https://angelguzmanmaeso.com",
+			"role" : "Developer"
+		}
+	],
+	"support" : {
+		"email" : "angel@guzmanmaeso.com"
+	},
+	"require" : {
+		"php" : "^7.1"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "~6.0"
+	},
+	"keywords" : [
+		"delevery",
+		"shipment",
+		"export",
+		"import",
+		"Packlink"
+	],
+	"config" : {
+		"sort-packages" : true
+	},
+	"autoload" : {
+		"psr-0" : {
+			"PackLink\\" : "src/"
+		},
+		"psr-4" : {
+			"PackLink\\" : "src/"
+		}
+	},
+	"autoload-dev" : {
+		"psr-0" : {
+			"PackLinkTest\\" : "test/"
+		}
+	}
+}
