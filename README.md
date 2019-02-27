@@ -33,7 +33,7 @@ This will give you the flexibilty to choose what PSR-7 implementation and HTTP c
 If you just want to get started quickly you should run the following command:
 
 ```bash
-composer require shakaran/packlink-php kriswallsmith/buzz nyholm/psr7
+composer require shakaran/packlink-php-sdk kriswallsmith/buzz nyholm/psr7
 ```
 
 ## Quick start
@@ -55,3 +55,8 @@ $apiKey = 'your_api_key';
 $api = ApiClient::create($apiKey, 'https://api.packlink.com');
 
 ```
+
+## Examples
+
+Under the [Examples directory][https://github.com/shakaran/packlink-php-sdk/tree/master/examples] you can find several examples of how to use more deeply this API.
+
