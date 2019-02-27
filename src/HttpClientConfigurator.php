@@ -79,6 +79,28 @@ final class HttpClientConfigurator
     }
 
     /**
+     * @return PluginClient
+     */
+    public function createConfiguredClientLogin(string $email, string $password): PluginClient
+    {
+        $plugins = [
+            new Plugin\AddHostPlugin($this->getUriFactory()->createUri($this->endpoint)),
+            new Plugin\HeaderDefaultsPlugin([
+                'User-Agent' => 'packlink-php-sdk/v1 (https://github.com/shakaran/packlink-php-sdk)',
+                'Authorization' => 'Basic '.base64_encode(sprintf('%s:%s', $email, $password)),
+                'Content-Type' => 'application/json',
+            ]),
+            new Plugin\HistoryPlugin($this->responseHistory),
+        ];
+
+        if ($this->debug) {
+            //$plugins[] = new ReplaceUriPlugin($this->getUriFactory()->createUri($this->endpoint));
+        }
+
+        return new PluginClient($this->getHttpClient(), $plugins); // @todo endpoint seems lost here
+    }
+
+    /**
      * @param bool $debug
      *
      * @return HttpClientConfigurator
