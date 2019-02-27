@@ -67,4 +67,4 @@ develoment or integration of this API in your project, just open a issue for con
 
 ## Buy me a coffe or beer!
 
-[![Buy me a coffee](https://i.imgur.com/Sk4LFzF.png)](https://www.paypal.me/quijost/3)
+[![Buy me a coffee](https://i.imgur.com/Sk4LFzF.png)](https://www.paypal.me/quijost/3) [![Join the chat at https://gitter.im/shakaran-packlink-php-sdk/community](https://badges.gitter.im/shakaran-packlink-php-sdk/community.svg)](https://gitter.im/shakaran-packlink-php-sdk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
