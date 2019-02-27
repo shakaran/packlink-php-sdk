@@ -85,6 +85,7 @@ abstract class HttpApi
             case 500 <= $statusCode:
                 throw HttpServerException::serverError($statusCode);
             default:
+                var_dump($statusCode);
                 throw new UnknownErrorException();
         }
     }

@@ -8,7 +8,7 @@ use PackLink\Exception\HttpClientException;
 /**
  * @author Ángel Guzmán Maeso <angel@guzmanmaeso.com>
  */
-class Login extends HttpApi
+class Services extends HttpApi
 {
     /**
      * Return a token if the user is created sucessfully.
@@ -16,26 +16,15 @@ class Login extends HttpApi
      * @param User $user
      * @return IndexResponse
      */
-    public function index(string $platform = 'pro', string $platform_country = 'es')
+    public function index()
     {
-        if($platform != 'pro')
-        {
-            throw new HttpClientException('platform value invalid');
-        }
-
-        if(!in_array($platform_country, ['es', 'fr', 'it', 'de']))
-        {
-            throw new HttpClientException('platform_country value invalid');
-        }
 
         $params = [
-            'platform' => $platform,
-            'platform_country' => $platform_country
         ];
 
         // @todo this should be unnecessary, but HttpClientConfigurator->createConfiguredClient not work properly
         $endpoint = 'https://api.packlink.com/v1';
-        $response = $this->httpGet($endpoint . '/login', $params,  ['Content-Type' => 'application/json']);
+        $response = $this->httpGet($endpoint . '/services', $params,  []);
 
         return $this->hydrateResponse($response, IndexResponse::class);
     }
