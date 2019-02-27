@@ -5,6 +5,8 @@ namespace Packlink;
 use PackLink\HttpClientConfigurator;
 use PackLink\Api\Register;
 use PackLink\Api\Login;
+use PackLink\Api\Users;
+use PackLink\Api\Services;
 use PackLink\Hydrator\ModelHydrator;
 use PackLink\Hydrator\Hydrator;
 use PackLink\HttpClient\RequestBuilder;
@@ -72,6 +74,25 @@ class ApiClient
         return new Register($this->httpClient, $this->requestBuilder, $this->hydrator);
     }
 
+    /**
+     * Entry point for section Users in PackLink API server.
+     *
+     * @return IndexResponse
+     */
+    public function users()
+    {
+        return new Users($this->httpClient, $this->requestBuilder, $this->hydrator);
+    }
+
+    /**
+     * Entry point for section Services in PackLink API server.
+     *
+     * @return IndexResponse
+     */
+    public function services()
+    {
+        return (new Services($this->httpClient, $this->requestBuilder, $this->hydrator))->index();
+    }
     /**
      * Entry point for section Login in PackLink API server.
      *
