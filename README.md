@@ -62,7 +62,7 @@ Under the [Examples directory](https://github.com/shakaran/packlink-php-sdk/tree
 
 ## Support
 
-Do you like my work? I am a Senior Backend Freelancer & Sysadmin, you can hire me to modify/implement/customize your custom
+Do you like my work? I am a Senior Backend Freelancer & Sysadmin, [you can hire me](https://www.upwork.com/fl/angelguzmanmaeso#/) to modify/implement/customize your custom
 develoment or integration of this API in your project, just open a issue for contact me or drop me an email to angel@guzmanmaeso.com!
 
 ## Buy me a coffe or beer!
