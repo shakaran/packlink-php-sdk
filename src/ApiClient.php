@@ -4,6 +4,7 @@ namespace Packlink;
 
 use PackLink\HttpClientConfigurator;
 use PackLink\Api\Register;
+use PackLink\Api\Login;
 use PackLink\Hydrator\ModelHydrator;
 use PackLink\Hydrator\Hydrator;
 use PackLink\HttpClient\RequestBuilder;
@@ -56,7 +57,7 @@ class ApiClient
             $this->hydrator = $hydrator ?: new ModelHydrator();
 
             $this->httpClient = $configurator->createConfiguredClient();
-            //$this->endpoint = $configurator->getEndPoint(); @todo
+            $this->endPoint = $configurator->getEndPoint(); // @todo
             $this->apiKey = $configurator->getApiKey();
             $this->responseHistory = $configurator->getResponseHistory();
     }
@@ -69,5 +70,20 @@ class ApiClient
     public function register()
     {
         return new Register($this->httpClient, $this->requestBuilder, $this->hydrator);
+    }
+
+    /**
+     * Entry point for section Login in PackLink API server.
+     *
+     * @return IndexResponse
+     */
+    public function login(string $email, string $password, string $platform = 'pro', string $platform_country = 'es')
+    {
+        $httpClientConfigurator = (new HttpClientConfigurator())
+        ->setApiKey($this->apiKey)
+        ->setEndpoint($this->endPoint);
+        $httpClientLogin = $httpClientConfigurator->createConfiguredClientLogin($email, $password);
+
+        return (new Login($httpClientLogin, $this->requestBuilder, $this->hydrator))->index($platform, $platform_country);
     }
 }
