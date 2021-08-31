@@ -60,6 +60,10 @@ $api = ApiClient::create($apiKey, 'https://api.packlink.com');
 
 Under the [Examples directory](https://github.com/shakaran/packlink-php-sdk/tree/master/examples) you can find several examples of how to use more deeply this API.
 
+## Other unofficial implementations
+
+* [MwSpaceLLC/packlink-php](https://github.com/MwSpaceLLC/packlink-php)
+
 ## Support
 
 Do you like my work? I am a Senior Backend Freelancer & Sysadmin, [you can hire me](https://www.upwork.com/fl/angelguzmanmaeso#/) to modify/implement/customize your custom
